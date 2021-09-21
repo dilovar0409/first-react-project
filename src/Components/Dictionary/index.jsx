@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { DictionaryInput, DictionaryPost, DictionaryWrapper, DictionDiv, DictionP, DictionP1, PostPage, PostPage2, YandexText } from './style';
+import { DictionaryInput, DictionaryPost, DictionaryWrapper, DictionDiv, DictionP, DictionP1, PostPage, PostPage2, PostPageDiv, YandexText } from './style';
 
 function Dictionary() {
 
@@ -39,21 +39,21 @@ function Dictionary() {
                         </PostPage>
                         <p>{tr?.map(({ text, pos, gen, fr, syn, mean, ex }, index) => (
                             <div>
-                                <PostPage>
+                                <PostPageDiv>
                                     <PostPage>
                                         <PostPage>{text}</PostPage>
-                                        <PostPage>({gen}),</PostPage>
+                                        <PostPage>..{gen}..</PostPage>
                                     </PostPage>
                                     {syn?.map(({ text, pos, gen, fr }, index) => (
                                         <PostPage>
                                             <p>{text}</p>
-                                            <p>({gen}),</p>
+                                            <p>..{gen}..</p>
                                         </PostPage>
                                     ))}
-                                </PostPage>
-                                <PostPage>({mean?.map(({ text }, index) => (
+                                </PostPageDiv>
+                                <PostPage>{mean?.map(({ text }, index) => (
                                     <PostPage>{text}</PostPage>
-                                ))})</PostPage>
+                                ))}</PostPage>
                                 <div>{ex?.map(({ text, tr }, index) => (
                                     <div>
                                         <p>{text}</p>

@@ -65,8 +65,19 @@ export const DictionaryPost = styled.div`
 
 export const PostPage=styled.div`
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #ffbf2b;
+`;
+
+export const PostPageDiv=styled.div`
+    display: flex;
+    color: red;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #ffbf2b;
+    font-size: 18px;
+    font-weight: bold;
 `;
 
 export const PostPage1=styled.div`
