@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
-export const YandexText=styled.p`
-    width: fit-content;
-    margin: auto;
+export const YandexText = styled.img`
+    width: 300px;
+    height: 100px;
+    object-fit: cover;
+`;
+
+export const YandexText1 = styled.div`
+   display: flex;
+   justify-content: center;
+   background-color: red;
+   padding-top: 10px;
+   p{
     font-size: 60px;
     font-weight: bold;
-    text-align: center;
-    color: red;
-    padding: 0px 15px 5px 15px;
-    background-color: white ;
-    margin-top: 15px;
+    margin: 30px 0 0 10px;
+    color: white;
+   }
 `;
 
 export const DictionaryWrapper = styled.div`
@@ -17,9 +24,13 @@ export const DictionaryWrapper = styled.div`
     margin: auto;
     display: flex;
     justify-content: space-between;  
-    padding: 20px 0;
-    p{
-    background-color: #ffbf2b;
+    padding: 10px 0;
+    select{
+        width: fit-content;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        outline:  1px solid #ffbf2b;
     }
 `;
 
@@ -31,19 +42,12 @@ export const DictionDiv = styled.div`
     padding: 10px;
     border-radius: 10px;
     border: 3px solid #ffbf2b;
-`;
-
-export const DictionP1 = styled.p`
-    width: fit-content;
-    border: 1px solid black;
-    padding: 4px 13px;
-    margin-bottom: 10px;
-    background-color: white !important;
-    font-size: 14px;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const DictionaryInput = styled.input`
-    width: 300px;
+    width: 100%;
     height: 25px;
     font-size: 20px;
     font-weight: bold;
@@ -56,43 +60,70 @@ export const DictionP = styled.p`
     font-size: 19px;
     font-weight: bold;
     color: black;
-    background-color: #ffbf2b;
 `;
 
 export const DictionaryPost = styled.div`
     width: 590px;
 `;
 
-export const PostPage=styled.div`
+export const PostPage = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
-    background-color: #ffbf2b;
 `;
 
-export const PostPageDiv=styled.div`
+export const PostPage4 = styled.div`
+    width: 130px;
     display: flex;
-    color: red;
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    background-color: #ffbf2b;
-    font-size: 18px;
-    font-weight: bold;
 `;
 
-export const PostPage1=styled.div`
+export const PostPage5 = styled.div`
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+`;
+
+export const PostPage6 = styled.div`
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+    color: #8C0000;
+`;
+
+export const PostPageDiv = styled.div`
+    width: 300px;
+    display: flex;
+    color: blue;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 16px;
+    /* font-weight: bold; */
+`;
+
+export const PostPage1 = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
 `;
 
-export const PostPage2=styled.div`
+export const PostPage2 = styled.div`
     display: flex;
     flex-direction: column;
     padding: 0 20px;
-    background-color: #ffbf2b;
-    color: white;
     border-radius: 10px;
     margin-left: 20px;
 `;
+
+export const PostPage3 = styled.div`
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+`;
+

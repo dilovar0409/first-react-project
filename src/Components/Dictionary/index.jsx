@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { DictionaryInput, DictionaryPost, DictionaryWrapper, DictionDiv, DictionP, DictionP1, PostPage, PostPage2, PostPageDiv, YandexText } from './style';
+import Yandex from '../../img/Yandex.png';   
+import { DictionaryInput, DictionaryPost, DictionaryWrapper, DictionDiv, DictionP, PostPage, PostPage2, PostPage3, PostPage4, PostPage5, PostPage6, PostPageDiv, YandexText, YandexText1 } from './style';
 
 function Dictionary() {
 
     const [state, setState] = useState({})
 
     const getDictionary = (e) => {
-        // console.log("change");
-        // console.log(e.target.value);
         const apiKey =
             "dict.1.1.20210915T143839Z.96e17f7f60ad28d4.e1bf52d3b734ee95be20a7e82dfe268e2601fce7";
         axios
@@ -24,39 +23,66 @@ function Dictionary() {
     };
     return (
         <div>
-            <YandexText>Yandex Dictionary</YandexText>
+            <YandexText1>
+            <YandexText src={Yandex} alt="yandex" />
+            <p>dictionary</p>
+            </YandexText1>
             <DictionaryWrapper>
                 <DictionDiv>
-                    <DictionP1> English → Russian ↓</DictionP1>
+                    <select id="select" defaultValue="en-ru" name="select">
+                        <option value="ru-ru">Russian ➞ Russian </option>
+                        <option value="ru-en">Russian ➞ English </option>
+                        <option value="ru-pl">Russian ➞ Polandish </option>
+                        <option value="ru-uk">Russian ➞ Ukrainian </option>
+                        <option value="ru-de">Russian ➞ German </option>
+                        <option value="ru-fr">Russian ➞ French </option>
+                        <option value="ru-es">Russian ➞ Spanish </option>
+                        <option value="ru-it">Russian ➞ Italian </option>
+                        <option value="ru-tr">Russian ➞ Turkish </option>
+                        <option value="en-ru">English ➞ Russian </option>
+                        <option value="en-en">English ➞ English </option>
+                        <option value="en-de">English ➞ German </option>
+                        <option value="en-fr">English ➞ French </option>
+                        <option value="en-es">English ➞ Spanish </option>
+                        <option value="en-it">English ➞ Italian </option>
+                        <option value="en-tr">English ➞ Turkish </option>
+                        <option value="pl-ru">Polandish ➞ Russian </option>
+                        <option value="uk-ru">Ukrainian ➞ Russian </option>
+                        <option value="de-ru">German ➞ Russian </option>
+                        <option value="de-en">German ➞ English </option>
+                        <option value="fr-ru">French ➞ Russian </option>
+                        <option value="fr-en">French ➞ English </option>
+                        <option value="es-ru">Spanish ➞ Russian </option>
+                        <option value="es-en">Spanish ➞ English </option>
+                        <option value="it-ru">Italian ➞ Russian </option>
+                        <option value="it-en">Italian ➞ English </option>
+                        <option value="tr-ru">Turkish ➞ Russian </option>
+                        <option value="tr-en">Turkish ➞ English </option>
+                    </select>
                     <DictionaryInput onChange={getDictionary} type="text" placeholder="Type something to translate" />
                 </DictionDiv>
                 <PostPage2>{state.def?.map(({ text, pos, ts, tr }, index) => (
                     <DictionaryPost>
-                        <PostPage>
+                        <PostPage4>
                             <DictionP>{text}</DictionP>
                             <p>[{ts}]</p>
                             <p>{pos}</p>
-                        </PostPage>
+                        </PostPage4>
                         <p>{tr?.map(({ text, pos, gen, fr, syn, mean, ex }, index) => (
                             <div>
                                 <PostPageDiv>
-                                    <PostPage>
-                                        <PostPage>{text}</PostPage>
-                                        <PostPage>..{gen}..</PostPage>
-                                    </PostPage>
+                                        <PostPage5>{text}</PostPage5>
                                     {syn?.map(({ text, pos, gen, fr }, index) => (
                                         <PostPage>
-                                            <p>{text}</p>
-                                            <p>..{gen}..</p>
+                                            <PostPage5>{text}</PostPage5>
                                         </PostPage>
                                     ))}
                                 </PostPageDiv>
                                 <PostPage>{mean?.map(({ text }, index) => (
-                                    <PostPage>{text}</PostPage>
+                                    <PostPage6>{text}</PostPage6>
                                 ))}</PostPage>
                                 <div>{ex?.map(({ text, tr }, index) => (
                                     <div>
-                                        <p>{text}</p>
                                         <p>{tr.text}</p>
                                     </div>
                                 ))}</div>
